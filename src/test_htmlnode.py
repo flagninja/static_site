@@ -19,9 +19,9 @@ class TestHTMLNode(unittest.TestCase):
         self.assertEqual(node1.props_to_html(),target)
 
     def test_repr(self):
-        node1 = HTMLNode("<p>","hello world")
-        node4 = HTMLNode(None,"blah")
-        node2 = HTMLNode("<a>","link_here",[node1,node4])
+        node1 = HTMLNode(tag="p",value="hello world")
+        node4 = HTMLNode(value="blah")
+        node2 = HTMLNode(tag="a",value="link_here",children=[node1,node4])
         node3 = HTMLNode(children=[node2])
         print(node1)
         print(node2)
