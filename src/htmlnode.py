@@ -23,7 +23,7 @@ class LeafNode(HTMLNode):
     def __init__(self,*,tag=None,value,props=None):
         super().__init__(tag=tag,value=value,props=props,children=None)
 
-    def to_html(self): #TODO write unit test for html representation
+    def to_html(self):
         if not self.value:
             raise ValueError("leaf node requires a value")
         if not self.tag:
