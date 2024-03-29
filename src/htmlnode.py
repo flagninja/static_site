@@ -17,11 +17,11 @@ class HTMLNode:
         return prop_out
     
     def __repr__(self): #test this with nested children to see how it looks.  It looks bad :(  solution: we don't print the children.
-        return f"tag: {self.tag}, value: {self.value}, props: {self.props}"
+        return f"tag: <{self.tag}>, value: {self.value}, props: {self.props}"
     
 class LeafNode(HTMLNode):
     def __init__(self,*,tag=None,value,props=None):
-        super.__init__(self,tag=tag,value=value,props=props)
+        super().__init__(tag=tag,value=value,props=props,children=None)
 
     def to_html(self): #TODO write unit test for html representation
         if not self.value:
@@ -29,5 +29,4 @@ class LeafNode(HTMLNode):
         if not self.tag:
             return self.value
         if not self.props:
-            return f"<{self.tag}{self.props_to_html()}>{self.value}</{self.tag}>"
-        
+            return f"<{self.tag}{self.props_to_html()}>{self.value}</{self.tag}>"        

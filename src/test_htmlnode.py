@@ -1,6 +1,6 @@
 import unittest
 
-from htmlnode import HTMLNode
+from htmlnode import *
 
 
 class TestHTMLNode(unittest.TestCase):
@@ -26,6 +26,11 @@ class TestHTMLNode(unittest.TestCase):
         print(node1)
         print(node2)
         print(node3)
+        self.assertTrue(True)
+
+    def test_leaf_to_html(self):
+        node1 = LeafNode(tag='b',value="Dog Alarm!")
+        print(node1.to_html())
         self.assertTrue(True)
 
 
